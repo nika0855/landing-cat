@@ -1,3 +1,10 @@
+$color: #fff;
+
 body {
   background: green;
+  font-family: 'Area', sans-serif;
+}
+h1 {
+	font-size: 44px;
+	color: $color;
 }

@@ -1,10 +1,34 @@
-doctype html
+<doctype html>
 html(lang='ru')
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible', content="IE=edge")
-    meta(name='viewport' content='width=device-width')
-    link(rel="stylesheet" href="css/main.min.css")
-    title Business
-  body
-    h1 This is a cool project
+	head
+		meta(charset='UTF-8')
+		meta(http-equiv='X-UA-Compatible', content="IE=edge")
+		meta(name='viewport' content='width=device-width')
+		link(rel="stylesheet" href="css/main.min.css")
+		title Business
+	body
+		h1 This is a cool project
+		
+	-var index = 1
+	-var anotherLinks = ['anotherHome', 'anotherContacts']
+		select
+			while index <= 10
+				option=index++
+	-var links = ['HOME', 'CONTACTS', 'ABOUT', 'PRICE']	
+	ul.list 
+		each link in links 
+			li.link__item
+				if link === 'HOME'
+					span=link
+				else 					
+					a(href="#").list__link=link	
+
+	ul 
+		each link in anotherLinks
+			li: a=link	
+
+	include mixins.pug 
+	
+
+	
+					

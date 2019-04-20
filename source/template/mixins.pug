@@ -1,0 +1,12 @@
+
+
+mixin list(items, className, active)
+	ul(class=className)
+		each item, index in items
+			li(class=className + '__item')
+				if index === active
+					span(class=className + '__active')=item
+				else
+					a(class=className + '__link')=item
+
++list(['firs1', 'second2'], 'list', 0)
