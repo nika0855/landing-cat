@@ -2,6 +2,10 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const autoprefixer = require('gulp-autoprefixer');
 const spritesmith = require('gulp.spritesmith');
 const rimraf = require('rimraf');
 const rename = require('gulp-rename');
@@ -23,6 +27,14 @@ gulp.task('server', function() {
 /* ------------ Pug compile ------------- */
 gulp.task('templates:compile', function buildHTML() {
   return gulp.src('source/template/*.pug')
+    .pipe(plumber({
+      errorHandler: notify.onError(function(err) {
+        return {
+          title: 'Pug',
+          message: err.message
+          }
+        })
+      }))
     .pipe(pug({
       pretty: true
     }))
@@ -32,9 +44,24 @@ gulp.task('templates:compile', function buildHTML() {
 /* ------------ Styles compile ------------- */
 gulp.task('styles:compile', function () {
   return gulp.src('source/styles/main.scss')
+    .pipe(plumber({
+      errorHandler: notify.onError(function(err) {
+        return {
+          title: 'Styles',
+          message: err.message
+          }
+        })
+      }))
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+      }))
     .pipe(rename('main.min.css'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('build/css'));
+    
 });
 
 /* ------------ Sprite ------------- */
