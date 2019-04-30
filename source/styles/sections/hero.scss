@@ -1,0 +1,13 @@
+.hero {
+	min-height: 59px;
+	padding: 174px 0;
+	text-align: center;
+	color: #fff;
+	background: #ccc url('../images/hero-bg.jpg') center/cover no-repeat;
+
+	&__about {
+		font-family: $ff-main-bold;
+		font: 3rem;
+		line-height: 1;
+	}
+}
