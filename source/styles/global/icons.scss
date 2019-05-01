@@ -3,6 +3,7 @@
 
 }
 
+
 .icon-like {
   position: relative;
 	 @include sprite($like);
@@ -38,3 +39,4 @@
 .icon-message {
 	@include sprite($message);
 }
+
