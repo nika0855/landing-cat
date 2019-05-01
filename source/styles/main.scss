@@ -2,12 +2,16 @@
 @import "../../node_modules/normalize.scss/normalize";
 
 @import "global/fonts";
+@import "global/mixins";
 @import "global/vars";
 @import "global/base";
 @import "global/common";
 @import "global/sprite";
+@import "global/icons";
 @import "global/button";
 
 @import "sections/header";
 @import "sections/nav";
 @import "sections/hero";
+@import "sections/about";
+@import "sections/title";

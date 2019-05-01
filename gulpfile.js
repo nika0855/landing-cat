@@ -105,7 +105,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', gulp.series(
   'clean',
-  gulp.parallel('templates:compile', 'styles:compile', 'copy'),
+  gulp.parallel('templates:compile', 'styles:compile', 'sprite', 'copy'),
   gulp.parallel('watch', 'server')
   )
 );

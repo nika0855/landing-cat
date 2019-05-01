@@ -16,3 +16,10 @@
 	top: 50%;
 	transform: translate(-50%);
 }
+
+// @mixin sprite($sprite) {
+//   @include sprite-image($sprite);
+//   @include sprite-position($sprite);
+//   @include sprite-width($sprite);
+//   @include sprite-height($sprite);
+// }
