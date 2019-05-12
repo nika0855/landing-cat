@@ -8,32 +8,32 @@
   position: relative;
 	 @include sprite($like);
 
-  &:after {
-  	position: absolute;
-  	content: "";
-  width: 120px;
-	height: 120px;
-	background: green;
-	top: -20px;
-    left: -20px;
-	z-index: -1;
-  };
+ //  &:after {
+ //  	position: absolute;
+ //  	content: "";
+ //  width: 120px;
+	// height: 120px;
+	// background: green;
+	// top: -20px;
+ //    left: -20px;
+	// z-index: -1;
+ //  };
 }
 
 .icon-book {
 	position: relative;
 	@include sprite($book);
 
-	&:after {
-  	position: absolute;
-  	content: "";
-  width: 120px;
-	height: 120px;
-	background: green;
-	top: -20px;
-    left: -20px;
-	z-index: -1;
-  };
+	// &:after {
+ //  	position: absolute;
+ //  	content: "";
+ //  width: 120px;
+	// height: 120px;
+	// background: green;
+	// top: -20px;
+ //    left: -20px;
+	// z-index: -1;
+ //  };
 }
 
 .icon-message {
